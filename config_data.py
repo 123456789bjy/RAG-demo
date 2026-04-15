@@ -14,7 +14,7 @@ separators = ["\n\n", "\n", ".", "!", "?", "。", "！", "？", " ", ""]
 max_split_char_number = 1000        # 文本分割的阈值
 
 #
-similarity_threshold = 1            # 检索返回匹配的文档数量
+similarity_threshold = 5            # 检索返回匹配的文档数量
 
 embedding_model_name = "text-embedding-v4"
 chat_model_name = "qwen3-max"
@@ -24,3 +24,12 @@ session_config = {
             "session_id": "user_001",
         }
     }
+# 人工复核任务："json"=本地 JSON，无需 Redis；"redis"=需本机启动 Redis
+review_tasks_backend = "json"
+review_path = "./data/review.json"
+
+# redis_host = "127.0.0.1"
+# redis_port = 6379
+# redis_db = 0
+# redis_password = None
+# review_tasks_redis_prefix = "review"
